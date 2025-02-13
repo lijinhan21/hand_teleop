@@ -1,0 +1,14 @@
+retargeting:
+  type: vector
+  urdf_path: dex-hand/urdf_v2.urdf
+
+  # Target refers to the retargeting target, which is the robot hand
+  target_joint_names: [ 'ff_proximal_joint', 'mf_proximal_joint', 'rf_proximal_joint', 'lf_proximal_joint', 'th_joint_2', 'th_joint_1' ]
+  target_origin_link_names: [ "base_link", "base_link", "base_link", "base_link", "base_link" ]
+  target_task_link_names: [ "thumb_tip",  "index_tip", "middle_tip", "ring_tip", "pinky_tip"]
+  scaling_factor: 0.5
+
+  target_link_human_indices: [ [ 0, 0, 0, 0, 0 ], [ 4, 8, 12, 16, 20 ] ]
+
+  # A smaller alpha means stronger filtering, i.e. more smooth but also larger latency
+  low_pass_alpha: 1.0
